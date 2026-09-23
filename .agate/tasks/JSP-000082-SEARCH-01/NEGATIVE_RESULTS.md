@@ -25,27 +25,41 @@ Erdős–Gyárfás conjecture beyond the stated ranges.
 n=20 is additionally closed for disconnected graphs via (1)-(3):
 components have <20 vertices, all covered by the chain.
 
-## n=22 (single-order statements, connectivity caveat noted)
+## n=22 (closed unconditionally — corrected)
 
-- m=33 cubic: 553,227 C4-free cubic graphs generated (geng count
-  matches rosharma719 exactly), check_g6: every one contains C8.
+- m=33 cubic: 553,227 connected C4-free cubic graphs generated (geng
+  count matches rosharma719 exactly), check_g6: every one contains C8.
   0 survivors.
 - m=34 extremal: 13,644 graphs, min-degree 1 (224) or 2 (13,420).
 - => no CONNECTED delta>=3 graph on 22 vertices avoids all of
-  {C4,C8,C16}. A disconnected n=22 counterexample would need a
-  counterexample component on <=21 vertices; n<=20 is closed but
-  n=21 is NOT (see below), so "no n=22 counterexample" is conditional
-  on the open n=21 layer.
+  {C4,C8,C16}.
+- Disconnected case does NOT need n=21: a delta>=3 component has >=4
+  vertices, so in a disconnected 22-vertex graph every component has
+  <=22-4=18 vertices. Each component would itself be a delta>=3
+  2-power-cycle-free graph on <=18 <=20 vertices — excluded by the
+  chain above.
+- **Conclusion: exactly n=22 is closed by this round.** What remains
+  missing for "all n<=22" is the single order n=21, not anything at
+  n=22 itself.
 
-## Open layers encountered (not closed)
+## Layers not covered by this round (vs. literature status)
+
+"Not covered here" must NOT be read as "open in the literature."
+Garcia (arXiv:2609.04686, 2026-09-04) reports DRAT-certified exclusion
+of all delta>=3 {C4,C8}-free graphs on <=23 vertices, i.e. the n=21
+and n=23 layers below are claimed closed in print. This task neither
+reproduced nor refuted that computation.
 
 - n=21 m=32 (seq 4,3^20): geng -c -f -d3 -D4 generation did not
   complete: ~177 CPU-min count-only attempt + ~108 CPU-min piped
-  attempt, both killed at wall deadline. Layer OPEN.
-- n=23 m=35 (seq 4,3^22): not started (budget).
+  attempt, both killed at wall deadline. NOT COVERED HERE;
+  literature-claimed-closed (Garcia, unreproduced).
+- n=23 m=35 (seq 4,3^22): not started (budget). Same literature caveat.
 - n=24 m=36 cubic: ~122 CPU-min generation, no output before kill.
-  Layer OPEN. m=37 layer not started; m=38 extremal audit shows all
-  min-deg 2 (980 graphs).
+  NOT COVERED HERE. This is the first order at which the published
+  general bound (>=24) permits a counterexample in principle.
+  m=37 layer not started; m=38 extremal audit shows all min-deg 2
+  (980 graphs).
 - Cubic n=30 CEGAR (edge-minimal encoding, Glucose3): ~33min wall,
   no candidate; stats lost on kill. Bounded probe only -- NOT coverage.
 
@@ -60,7 +74,16 @@ components have <20 vertices, all covered by the chain.
 
 ## Honest summary
 
-Smallest possible counterexample order: >=21 (this round) -- published
-floor is >=17 (Royle-Markstrom); rosharma719 had reached 19.
-The genuinely open near-frontier: n=21 m=32, n=23 m=35, all of
-n=24..29 non-cubic, cubic n=30.
+Own-chain floor this round: no counterexample on <=20 vertices, and
+none on exactly 22 vertices. This is a finite-scope reproduction /
+audited re-derivation, not a new literature bound.
+
+Literature floor (reported, not reproduced here): >=24 general
+(Garcia 2609.04686, DRAT-claimed); >=30 cubic (Royle-Markstrom);
+>=60 cubic bipartite (Tranquilli 2608.02675).
+
+What this round actually adds: an independent end-to-end pipeline
+(nauty generation + own C checker + cross-validated Python/SAT
+detectors + extremal-file audits) that re-certifies n<=20 and n=22,
+with exact counts matching prior manifests. Its value is verification
+value only; it establishes no new exclusion frontier.

@@ -28,7 +28,9 @@ Lean reference statement (verbatim semantics):
 | claim | scope | source | status |
 |---|---|---|---|
 | any counterexample needs >= 17 vertices | general δ>=3 | Royle & Markström, exhaustive search | SOURCE_VERIFIED / COMPUTATION_NOT_REPRODUCED |
+| **any counterexample needs >= 24 vertices** | general δ>=3 | D. Garcia, arXiv:2609.04686 (2026-09-04): SAT exhaustive + DRAT certs reportedly exclude δ>=3 {C4,C8}-free graphs on <=23 vertices | ABSTRACT_VERIFIED only — full text not fetched; DRAT certs NOT checked; COMPUTATION_NOT_REPRODUCED |
 | cubic counterexample needs >= 30 vertices | cubic | Royle & Markström | SOURCE_VERIFIED / COMPUTATION_NOT_REPRODUCED |
+| **cubic bipartite counterexample needs >= 60** | cubic bipartite ONLY | J. Tranquilli, arXiv:2608.02675 (2026-08-02): all simple cubic bipartite graphs on <=58 vertices contain C4, C8 or C16 | ABSTRACT+HTML_VERIFIED / COMPUTATION_NOT_REPRODUCED |
 | bipartite counterexample needs >= 30 | bipartite δ>=3 | reported, source TBC (rosharma L12) | UNCONFIRMED SOURCE |
 | ex(n,{C4,C8}) table n=4..23 | all graphs | B. McKay extremal data (users.cecs.anu.edu.au/~bdm/data/extremal.html), transcribed by rosharma719 | SOURCE_VERIFIED via transcription; spot-check possible |
 | n<=17: ex(n,{C4,C8}) < ceil(3n/2) strictly ⇒ no δ>=3 {C4,C8}-free graph ⇒ no counterexample | general | arithmetic on McKay table | DERIVED (needs only ex values) |
@@ -41,9 +43,18 @@ Lean reference statement (verbatim semantics):
 | Z3 and Z5 cyclic lifts of the 4 known order-24 {C4,C8}-free bases | lift family | rosharma719 z3_lifts/z5 audits | exhausted, 0 survivors (their runs) |
 | Markström 24-vertex cubic {C4,C8}-free graphs | 4 graphs | Markström; only 2-power cycle is C16 | SOURCE_VERIFIED |
 
-The "general >=24 vertices" and "cubic bipartite >=60" figures from the
-earlier scan were leads; the sourced values are 17 (general) and 30
-(cubic). Bipartite >=30 unconfirmed.
+Literature frontier as of audit (reported, not independently certified
+by this task): **general >=24** (Garcia 2609.04686, DRAT-certified per
+abstract — unverified by me), cubic >=30 (Royle–Markström),
+cubic bipartite >=60 (Tranquilli 2608.02675). Royle–Markström's older
+general bound is >=17; McKay extremal data supports a self-derived
+>=18 via the ex(n,{C4,C8}) table.
+
+IMPORTANT FRAMING: n=21 and n=23 layers are "NOT REPRODUCED BY THIS
+ROUND", NOT "open frontier" — Garcia's preprint reports them excluded.
+Any future doubt about that claim should be raised against the
+preprint's encoding/certificates directly, not by silently reverting
+to the older bound and re-enumerating.
 
 ## Competition audit (this problem only)
 

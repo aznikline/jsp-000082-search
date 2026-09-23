@@ -5,7 +5,12 @@ Erdős #64 (Erdős–Gyárfás conjecture).
 
 Owner branch: agent/jsp000082-search-01-owner
 
-Current state: COMPLETE -- STOP_NO_HIT (2026-09-23 ~23:20). See LEAD_FINAL.md.
+Current state: ARCHIVED -- NO ACTIVE SEARCH BUDGET.
+Verdict accepted: STOP_NO_HIT (2026-09-23). See LEAD_FINAL.md.
+Corrections applied post-review: literature frontier (Garcia 2609.04686
+>=24 general, Tranquilli 2608.02675 >=60 cubic bipartite — reported,
+not reproduced), n=22 closed unconditionally, verification-hierarchy
+wording. Reopening requires new evidence, not unfinished shards.
 
 Budget frozen (machine-detected 2026-09-23):
 
