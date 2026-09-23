@@ -25,10 +25,10 @@ def read_any(path):
 def from_sparse6(s):
     """Decode sparse6 (':...') to (n, edges)."""
     b = s.encode()[1:]
-    # n
-    if b[0] <= 62:
+    # n: 1 byte if <=62 (char n+63 in [63,125]), '~'+3 bytes if <=258047
+    if b[0] != 126:
         n = b[0] - 63; idx = 1
-    elif b[0] == 126 and b[1] <= 62:
+    elif b[1] != 126:
         n = ((b[1]-63)<<12)|((b[2]-63)<<6)|(b[3]-63); idx = 4
     else:
         raise ValueError("big sparse6 unsupported")
