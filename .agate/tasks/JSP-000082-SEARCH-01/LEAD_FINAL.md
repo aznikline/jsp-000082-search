@@ -55,8 +55,8 @@ inconclusive, not evidence either way.
 
 REMOTE_REPOSITORY=https://github.com/aznikline/jsp-000082-search
 REMOTE_BRANCH=agent/jsp000082-search-01-owner
-REMOTE_EXACT_HEAD=(filled post-push)
-TESTED_CODE_SHA=(see RUN_MANIFEST.jsonl)
+REMOTE_EXACT_HEAD=709f28ae9536d1cdbb91364ec73b3de0041c591b
+TESTED_CODE_SHA(short16): graphio.py=2e543c70ddb0e8b0; cyclecheck_a.py=1215deedf1aa5997; verify_b.py=576360e0a77b548f; searcher.py=8326451f976ecde3; check_g6.c=305f095b787063d8; run_shard.py=d4e155d2a0455046; cegar_shard.py=ead9c8c6e9ec2865; mindeg_audit.py=45f9c41f6ff79c0d; tests.py=f2f61e3aa4bc8f3e
 TASK_PATH=.agate/tasks/JSP-000082-SEARCH-01/
 TREE_CLEAN=YES
 SEARCH_STATUS=STOP_NO_HIT
