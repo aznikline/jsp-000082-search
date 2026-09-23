@@ -23,7 +23,7 @@ Loop: solve -> extract graph -> detector A over forbidden lengths ->
 import signal
 import time
 
-from pysat.solvers import Cadical195
+from pysat.solvers import Glucose3 as _Solver
 from pysat.card import ITotalizer, CardEnc, EncType
 from pysat.formula import IDPool
 
@@ -117,7 +117,7 @@ def model_to_edges(n, ev, model):
 def cegar_search(n, cnf_base, ev, time_cap=600, iter_cap=None,
                  per_solve_cap=300, cycle_cap=20000, seed=0, log=print):
     """Run the lazy-separation loop. Returns dict with status and stats."""
-    solver = Cadical195(bootstrap_with=cnf_base)
+    solver = _Solver(bootstrap_with=cnf_base)
     stats = {"iterations": 0, "blocked_cycles": {L: 0 for L in
              cyclecheck_a.forbidden_lengths(n)}, "solve_status": None}
     t0 = time.time()

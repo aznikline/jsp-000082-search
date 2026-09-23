@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/Users/wizout/op/learn/sunyuchen/jsp-000082-search/tools/cegar_shard.py", line 79, in <module>
+    main()
+    ~~~~^^
+  File "/Users/wizout/op/learn/sunyuchen/jsp-000082-search/tools/cegar_shard.py", line 50, in main
+    r = S.cegar_search(a.n, cnf, ev, time_cap=a.time)
+  File "/Users/wizout/op/learn/sunyuchen/jsp-000082-search/tools/searcher.py", line 140, in cegar_search
+    r = solver.solve_limited()
+  File "/private/tmp/jsp082-venv/lib/python3.14/site-packages/pysat/solvers.py", line 2526, in solve_limited
+    self.status = pysolvers.cadical195_solve_lim(self.cadical,
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+            assumptions, int(MainThread.check()))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wizout/op/learn/sunyuchen/jsp-000082-search/tools/searcher.py", line 127, in handler
+    solver.interrupt()
+    ~~~~~~~~~~~~~~~~^^
+  File "/private/tmp/jsp082-venv/lib/python3.14/site-packages/pysat/solvers.py", line 2601, in interrupt
+    raise NotImplementedError('Limited solve is currently unsupported by CaDiCaL.')
+NotImplementedError: Limited solve is currently unsupported by CaDiCaL.

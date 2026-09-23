@@ -5,7 +5,7 @@ Erdős #64 (Erdős–Gyárfás conjecture).
 
 Owner branch: agent/jsp000082-search-01-owner
 
-Current state: SETUP/CALIBRATION.
+Current state: COMPLETE -- STOP_NO_HIT (2026-09-23 ~23:20). See LEAD_FINAL.md.
 
 Budget frozen (machine-detected 2026-09-23):
 

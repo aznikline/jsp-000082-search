@@ -1,0 +1,26 @@
+{
+ "shard_id": "S2_n21m32",
+ "type": "geng_enum",
+ "geng_cmd": "geng -c -f -d3 -D4 21 32:32",
+ "check_cmd": "/Users/wizout/op/learn/sunyuchen/jsp-000082-search/tools/check_g6",
+ "geng_version": "nauty 2.9.3 (homebrew)",
+ "checker": "check_g6.c build 305f095b7870",
+ "TESTED_CODE_SHA": {
+  "graphio.py": "2e543c70ddb0e8b0055005828092b6690437fbb70ba4339267909feb863b4542",
+  "cyclecheck_a.py": "1215deedf1aa5997933249dd134d1010ad19d8bc3f25b3739b010fb8bee74c13",
+  "verify_b.py": "576360e0a77b548f4a7a6055d94d235af1ead8ec637561db41c720cbb7f23ece",
+  "searcher.py": "8326451f976ecde36fe4b5febf85ae782bb14123c577e0112440d79766c6451e",
+  "check_g6.c": "305f095b787063d896ec5bf78bf142a0a5ae4c7324394e07ad2388b4633d374e"
+ },
+ "n": 21,
+ "edge_range": "32:32",
+ "resmod": null,
+ "start": "2026-09-23T21:11:18+0800",
+ "elapsed_wall_s": 6797.8,
+ "geng_rc": -15,
+ "check_rc": 0,
+ "survivors_file": "logs/S2_n21m32.survivors.g6",
+ "survivors_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+ "log_sha256": "22a9833a990209c425208587ed90043a4af69a987565addf430e11f254f2430f",
+ "status": "ERROR"
+}
